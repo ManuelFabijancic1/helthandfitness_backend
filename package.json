@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+   "type": "module",
   "scripts": {
+    "build": "babel src -d build", 
+    "start": "node build/index.js", 
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
     "serve": "nodemon --exec babel-node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateo1423/health_and_fitness_backend.git"
   },
   "author": "",
   "license": "ISC",
@@ -16,17 +24,17 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
-    "git": "^0.1.5",
-    "heroku": "^7.60.2",
     "mongodb": "^4.7.0",
     "mongoose": "^6.3.8"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.10",
+    "@babel/cli": "^7.18.6",
+    "@babel/core": "^7.18.6",
     "@babel/node": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/plugin-transform-runtime": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/runtime": "^7.18.6",
+    "babel-core": "^7.0.0-bridge.0",
     "nodemon": "^2.0.7"
-  },"engines": {
-    "node":"16.15.1"
   }
 }
