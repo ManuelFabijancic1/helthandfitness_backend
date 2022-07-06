@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import connect from './db.js';
-import mongo from 'mongodb';
+
 
 import dotenv from "dotenv"
 dotenv.config();
