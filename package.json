@@ -5,7 +5,7 @@
   "main": "index.js",
    "type": "module",
   "scripts": {
-    "build": "babel src -d build", 
+    "build": "cd client && npm run build",
     "start": "node build/index.js", 
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
